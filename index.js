@@ -1,5 +1,3 @@
-/* Given Code, don't edit */
-
 function handleClick(e) {
   const timeString = document.getElementById('time').value
   displayMessage(greet(timeString))
@@ -8,24 +6,21 @@ function handleClick(e) {
 /* End Given Code, don't edit above here...*/
 
 /* Write your implementation of greet() */
-/* Write your implementation of displayMessage() */
-function greet(timenow){
-  timenow = timenow.split(':')
-  let timeString = timenow[0]
-  let res = parseInt (timeString,10);
-  if(res<12){
+function greet(timeString){
+  let hours = timeString.split(':')[0];
+
+
+
+  if (hours < 12) {
     return "Good Morning"
-  }
-  
-  else if(res > 17){
-  return "Good Evening"
-    
-  }
-  else{
+  }else if (hours <= 17) {
     return "Good Afternoon"
+  }else  {
+    return "Good Evening"
   }
+
 }
-function displayMessage(arg){
-  `welcome ${arg}`;
+/* Write your implementation of displayMessage() */
+function displayMessage(greeting){
+document.getElementById('greeting').innerText = greeting;
 }
-  
